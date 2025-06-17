@@ -1,0 +1,69 @@
+{
+  "name": "pub-express-pos",
+  "private": true,
+  "version": "5.23.25",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "author": {
+    "name": "Anthony Clyde Melendez",
+    "email": "anthonyclyde.melendez@gmail.com",
+    "url": "https://www.linkedin.com/in/anthonyclyde-melendez"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "chart.js": "^4.4.9",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "electron": "^36.1.0",
+    "electron-builder": "^26.0.12",
+    "vite": "^6.2.0"
+  },
+  "build": {
+    "appId": "com.pubexpress.pos",
+    "productName": "Pub Express POS",
+    "files": [
+      "dist/",
+      "electron/",
+      "backend/",
+      "backend/pub_express.db",
+      "backend/venv/**",
+      "package.json"
+    ],
+    "asar": false,
+    "directories": {
+      "output": "release"
+    },
+    "extraResources": [
+      {
+        "from": "backend/dist/fastapi-backend.exe",
+        "to": "fastapi-backend.exe"
+      },
+      {
+        "from": "backend/pub_express.db",
+        "to": "pub_express.db"
+      },
+      {
+        "from": "backend/backups",
+        "to": "backups"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  }
+}

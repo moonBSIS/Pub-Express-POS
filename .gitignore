@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.spec
+
+# Environment
+.venv/
+env/
+.env
+
+# Build/Dist
+build/
+dist/
+release/
+*.exe
+
+# SQLite DB
+*.db
+*.sqlite3
+
+# Electron
+*.log
+*.DS_Store
+node_modules/
+electron/*.log
+
+# VS Code
+.vscode/
+
+# Docker
+docker-compose.override.yml
